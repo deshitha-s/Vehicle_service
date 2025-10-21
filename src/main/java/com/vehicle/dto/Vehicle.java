@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 public class Vehicle {
     private Long vehicleId;
     private String registrationNo;
-    private String category;
+    private String type;
     private String model;
-    private String brand;
 }

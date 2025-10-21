@@ -18,9 +18,10 @@ public class RecordEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long vehicleId;
-    @ManyToOne
+    private Long recordId;
+
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="vehicle_id")
-    private Vehicle vehicle;
+    private VehicleEntity vehicleEntity;
     private String serviceYear;
 }
