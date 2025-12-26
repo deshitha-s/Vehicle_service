@@ -30,19 +30,19 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public void addRecords(Record record) {
-        recordRepository.save(
-                RecordEntity.builder()
-                        .serviceYear(record.getServiceYear())
-                        .vehicleEntity(
-                                VehicleEntity.builder()
-                                        .type(record.getVehicle().getType())
-                                        .model(record.getVehicle().getModel())
-                                        .registrationNo(record.getVehicle().getRegistrationNo())
-                                        .build()
-                        )
-                        .build()
-        );
-
+        RecordEntity recordEntity = RecordEntity.builder()
+                .serviceYear(record.getServiceYear())
+                .vehicleEntity(
+                        VehicleEntity.builder()
+                                .type(record.getVehicle().getType())
+                                .model(record.getVehicle().getModel())
+                                .registrationNo(record.getVehicle().getRegistrationNo())
+                                .build()
+                )
+                .build();
+        if (recordEntity != null) {
+            recordRepository.save(recordEntity);
+        }
     }
 
     @Override

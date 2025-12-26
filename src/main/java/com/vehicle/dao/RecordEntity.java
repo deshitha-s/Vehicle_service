@@ -1,13 +1,10 @@
 package com.vehicle.dao;
 
-import com.vehicle.dto.Vehicle;
 import jakarta.persistence.*;
-import jdk.jfr.Enabled;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.web.WebProperties;
 
 @Entity
 @Data
